@@ -1,0 +1,28 @@
+Alur Program Aplikasi Daftar Belanja Interaktif
+Aplikasi "Daftar Belanja Interaktif" merupakan aplikasi web sederhana yang dibangun menggunakan kombinasi bahasa pemrograman PHP, HTML, CSS, dan JavaScript. Tujuan dari aplikasi ini adalah untuk memungkinkan pengguna menambahkan dan menghapus item dalam daftar belanja mereka secara langsung dari browser, tanpa perlu menggunakan database. Semua data disimpan secara sementara menggunakan session PHP. Berikut adalah alur kerja program ini secara berurutan:
+
+1. Inisialisasi dan Penyimpanan Data dengan Session
+Ketika pengguna pertama kali membuka halaman aplikasi, server akan mengeksekusi kode PHP yang berada di bagian paling atas file. Di bagian ini, program memulai session dengan fungsi session_start(). Session ini berguna untuk menyimpan data pengguna selama mereka mengakses aplikasi, walaupun halaman di-refresh.
+
+Setelah session dimulai, program memeriksa apakah sudah ada data daftar belanja ($_SESSION['shopping_list']). Jika belum, program secara otomatis mengisi daftar tersebut dengan tiga item default, yaitu "Beras", "Minyak Goreng", dan "Telur". Hal ini menjamin bahwa saat pertama kali aplikasi digunakan, pengguna langsung melihat contoh daftar belanja awal.
+
+2. Menangani Penambahan Item
+Di bawah blok inisialisasi, program memeriksa apakah ada input yang dikirim melalui metode POST, yaitu ketika pengguna mengisi form dan menekan tombol "Tambah". Jika ada, program akan mengambil data dari input item, membersihkannya dari spasi berlebih menggunakan fungsi trim(), lalu menambahkan item tersebut ke dalam session array shopping_list. Dengan ini, daftar belanja akan bertambah secara dinamis berdasarkan input pengguna.
+
+3. Menangani Penghapusan Item
+Selain menambahkan, pengguna juga bisa menghapus item dari daftar. Ketika pengguna mengklik link "Hapus" di samping salah satu item, browser akan mengirim permintaan ke URL dengan parameter ?hapus=index. Program PHP kemudian membaca parameter ini melalui $_GET["hapus"] dan menggunakan fungsi array_splice() untuk menghapus item yang sesuai berdasarkan indeksnya. Proses ini sangat efisien karena tidak perlu reload seluruh data atau menggunakan database.
+
+4. Menampilkan Tampilan ke Pengguna
+Setelah semua logika server selesai dijalankan, program masuk ke bagian HTML untuk menampilkan hasilnya ke browser pengguna. HTML membentuk struktur tampilan seperti judul halaman, form untuk menambahkan item, dan daftar item yang ditampilkan dalam bentuk list (<ul> dan <li>). Di bagian ini juga terdapat integrasi antara PHP dan HTML, di mana perulangan foreach digunakan untuk menampilkan setiap item yang tersimpan dalam session ke dalam elemen HTML <li>. Setiap item juga dilengkapi dengan tombol "Hapus" yang mengarah ke URL dengan parameter indeks item.
+
+5. Mempercantik Tampilan dengan CSS
+Agar tampilan aplikasi lebih menarik dan mudah digunakan, kode CSS disisipkan langsung dalam halaman HTML. CSS digunakan untuk membuat desain halaman menjadi modern dan responsif. Warna latar belakang, bentuk tombol, jarak antar elemen, dan efek bayangan pada kotak daftar semua diatur melalui CSS. Ini memberikan kesan profesional dan bersih pada aplikasi.
+
+6. Validasi Input dengan JavaScript
+Terakhir, aplikasi juga dilengkapi dengan kode JavaScript yang berfungsi untuk melakukan validasi input sebelum form dikirim. Script ini akan mencegah form dikirim jika pengguna menekan tombol "Tambah" tanpa mengetikkan apapun. Jika input kosong, maka akan muncul peringatan berupa alert. Hal ini penting untuk menjaga agar data yang masuk ke daftar belanja tidak kosong atau asal-asalan.
+
+🧾 Kesimpulan
+Secara keseluruhan, alur kerja program ini sangat sederhana namun efektif. Program dimulai dengan mempersiapkan session dan data awal, kemudian menangani input dan penghapusan dari pengguna. Data ditampilkan kembali dalam format HTML, dihias dengan CSS, dan diperiksa validitasnya dengan JavaScript sebelum dikirim ke server. Semua proses ini terjadi dalam satu file, yang menjadikannya sangat efisien untuk pemula belajar konsep dasar interaksi frontend dan backend.
+
+Dengan memahami alur ini, kita bisa menyadari bagaimana bahasa-bahasa web saling bekerja sama: PHP untuk logika server, HTML untuk struktur tampilan, CSS untuk desain, dan JavaScript untuk interaksi dan validasi. Aplikasi ini bisa menjadi pondasi yang kuat sebelum melangkah ke proyek-proyek web yang lebih kompleks.
+
