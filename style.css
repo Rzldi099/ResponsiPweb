@@ -1,65 +1,76 @@
+/* Atur tampilan dasar body halaman */
 body {
-    font-family: sans-serif;
-    background: #f3f3f3;
-    padding: 20px;
+    font-family: sans-serif; /* Gunakan font tanpa kait */
+    background: #f3f3f3; /* Warna latar belakang */
+    padding: 20px; /* Jarak isi dari tepi halaman */
 }
 
+/* Kontainer utama */
 .container {
-    max-width: 500px;
-    margin: auto;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #ccc;
+    max-width: 500px; /* Batas lebar maksimal */
+    margin: auto; /* Posisi tengah */
+    background: white; /* Latar putih */
+    padding: 20px; /* Isi dalam kontainer */
+    border-radius: 10px; /* Sudut membulat */
+    box-shadow: 0 0 10px #ccc; /* Efek bayangan */
 }
 
+/* Judul halaman */
 h1 {
-    text-align: center;
-    color: #444;
+    text-align: center; /* Rata tengah */
+    color: #444; /* Warna abu-abu gelap */
 }
 
+/* Form tambah item */
 form {
-    display: flex;
-    margin-bottom: 20px;
+    display: flex; /* Susun input dan tombol sejajar */
+    margin-bottom: 20px; /* Jarak bawah form */
 }
 
+/* Input teks */
 input[type="text"] {
-    flex: 1;
-    padding: 10px;
-    font-size: 16px;
+    flex: 1; /* Ambil ruang yang tersedia */
+    padding: 10px; /* Jarak dalam input */
+    font-size: 16px; /* Ukuran font */
 }
 
+/* Tombol tambah */
 button {
-    padding: 10px 15px;
-    background: #28a745;
-    border: none;
-    color: white;
-    cursor: pointer;
+    padding: 10px 15px; /* Ukuran tombol */
+    background: #28a745; /* Warna hijau */
+    border: none; /* Tanpa garis pinggir */
+    color: white; /* Warna teks */
+    cursor: pointer; /* Kursor berubah saat diarahkan */
 }
 
+/* Efek hover pada tombol */
 button:hover {
-    background: #218838;
+    background: #218838; /* Warna hijau lebih gelap saat hover */
 }
 
+/* Daftar item */
 ul {
-    list-style: none;
+    list-style: none; /* Hilangkan bullet */
     padding: 0;
 }
 
+/* Setiap item belanja */
 li {
-    padding: 10px;
-    margin-bottom: 8px;
-    background: #f9f9f9;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding: 10px; /* Isi dalam */
+    margin-bottom: 8px; /* Jarak antar item */
+    background: #f9f9f9; /* Warna abu muda */
+    display: flex; /* Susun isi dan tombol hapus sejajar */
+    justify-content: space-between; /* Jarak antar elemen kiri dan kanan */
+    align-items: center; /* Rata tengah vertikal */
 }
 
+/* Tautan hapus */
 a.hapus {
-    color: red;
-    text-decoration: none;
+    color: red; /* Warna merah */
+    text-decoration: none; /* Tanpa garis bawah */
 }
 
+/* Efek hover pada hapus */
 a.hapus:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Tambahkan garis bawah saat diarahkan */
 }
