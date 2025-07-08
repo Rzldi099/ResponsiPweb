@@ -49,8 +49,10 @@ if (isset($_GET["hapus"])) {
         </form>
 
         <ul id="shopping-list">
+<!--             Perulangan pada elemen -->
             <?php foreach ($_SESSION['shopping_list'] as $index => $item): ?>
                 <li>
+<!--                     Ngubah karakter khusus dalam sebuah string menjadi entitas html -->
                     <?= htmlspecialchars($item) ?>
                     <a href="?hapus=<?= $index ?>" class="hapus">Hapus</a>
                 </li>
